@@ -42,12 +42,14 @@ class Thread05 extends Frame implements Runnable{
 		Dimension d; //Dimension은 폭 과 높이를 가지는 클래스
 		d = getSize(); // 프레임 윈도우 창 크기를 구현
 		g.setColor(Color.ORANGE); 
-		Font f = new Font("궁서체", Font.BOLD, 20);
-		g.setFont(f);
+		g.setFont(new Font("궁서체",Font.BOLD, 25));
 		g.drawString("내일부터 장마가 시작됩니다. 시간당 00mm가 내리니 주의하시길 바랍니다.", x, d.height/2);
 		
 		
 		// 글자크기 키우기 글꼴 궁서체 진하게 프레임 윈도우 폭을 벗어나면 다시 돌아오게 하기
+		
+		if(x > d.width) // x 좌표가 프레임 윈도우 너비를 벗어나면 다시 처음부터 반복하는 코드 
+			x = 0;      
 	}// 무엇을 그리고자 호출되는 메소드 
 }
 
